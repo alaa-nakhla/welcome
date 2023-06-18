@@ -1,0 +1,138 @@
+{
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.gitignore": true,
+        "**/.gitmodules": true,
+        "**/*.booproj": true,
+        "**/*.pidb": true,
+        "**/*.suo": true,
+        "**/*.user": true,
+        "**/*.userprefs": true,
+        "**/*.unityproj": true,
+        "**/*.dll": true,
+        "**/*.exe": true,
+        "**/*.pdf": true,
+        "**/*.mid": true,
+        "**/*.midi": true,
+        "**/*.wav": true,
+        "**/*.gif": true,
+        "**/*.ico": true,
+        "**/*.jpg": true,
+        "**/*.jpeg": true,
+        "**/*.png": true,
+        "**/*.psd": true,
+        "**/*.tga": true,
+        "**/*.tif": true,
+        "**/*.tiff": true,
+        "**/*.3ds": true,
+        "**/*.3DS": true,
+        "**/*.fbx": true,
+        "**/*.FBX": true,
+        "**/*.lxo": true,
+        "**/*.LXO": true,
+        "**/*.ma": true,
+        "**/*.MA": true,
+        "**/*.obj": true,
+        "**/*.OBJ": true,
+        "**/*.asset": true,
+        "**/*.cubemap": true,
+        "**/*.flare": true,
+        "**/*.mat": true,
+        "**/*.meta": true,
+        "**/*.prefab": true,
+        "**/*.unity": true,
+        "build/": true,
+        "Build/": true,
+        "Library/": true,
+        "library/": true,
+        "obj/": true,
+        "Obj/": true,
+        "ProjectSettings/": true,
+        "temp/": true,
+        "Temp/": true,
+        // Controls if quick suggestions should show up while typing
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        },
+
+        // Controls whether suggestions should be accepted on commit characters. For example, in JavaScript, the semi-colon (`;`) can be a commit character that accepts a suggestion and types that character.
+        "editor.acceptSuggestionOnCommitCharacter": true,
+
+        // Controls if suggestions should be accepted on 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions. The value 'smart' means only accept a suggestion with Enter when it makes a textual change
+        "editor.acceptSuggestionOnEnter": "on",
+
+        // Controls the delay in ms after which quick suggestions will show up.
+        "editor.quickSuggestionsDelay": 10,
+
+        // Controls if suggestions should automatically show up when typing trigger characters
+        "editor.suggestOnTriggerCharacters": true,
+
+        // Controls if pressing tab inserts the best suggestion and if tab cycles through other suggestions
+        "editor.tabCompletion": "on",
+
+        // Controls whether sorting favours words that appear close to the cursor
+        "editor.suggest.localityBonus": true,
+
+        // Controls how suggestions are pre-selected when showing the suggest list
+        "editor.suggestSelection": "first",
+    },
+    "[csharp]": 
+    {
+        "editor.formatOnSave": true,
+
+        // Enable word based suggestions
+        "editor.wordBasedSuggestions": true,
+
+        // Enable parameter hints
+        "editor.parameterHints.enabled": true,
+    },
+        // single: Comments are single-line comments that start with three slashes (///) (Default)
+        // delimited: Delimited comments that start with a slash and two stars (/**)
+        "docomment.syntax": "single",
+        // Press the Enter key to activate a command (Default: false)
+        "docomment.activateOnEnter": false,
+        // User-controllable options
+        "docomment.advanced": {
+            "cs": {
+                "namespace" : {
+                    "attributes" : ["summary"]
+                },
+                "class" : {
+                    "attributes" : ["summary", "typeparam"]
+                },
+                "interface" : {
+                    "attributes" : ["summary", "typeparam"]
+                },
+                "struct" : {
+                    "attributes" : ["summary"]
+                },
+                "enum" : {
+                    "attributes" : ["summary"]
+                },
+                "delegate" : {
+                    "attributes" : ["summary", "param", "typeparam", "returns"]
+                },
+                "field" : {
+                    "attributes" : ["summary"]
+                },
+                "property" : {
+                    "attributes" : ["summary", "value"]
+                },
+                "method" : {
+                    "attributes" : ["summary", "param", "typeparam", "returns"]
+                },
+                "event" : {
+                    "attributes" : ["summary"]
+                }
+            }
+        },
+        // Insert spaces when pressing Tab.
+        "editor.insertSpaces": true,
+        // The number of spaces a tab is equal to.
+        "editor.tabSize": 4,
+    
+    
+}

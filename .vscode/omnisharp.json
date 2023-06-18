@@ -1,0 +1,6 @@
+{
+    "RoslynExtensionsOptions": {
+      "EnableAnalyzersSupport": true,
+      "LocationPaths": ["/c/Program Files/dotnet"]
+    }
+  }
