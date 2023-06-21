@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MyCamera : MonoBehaviour
 {
+    private float y;
 
     void Start()
     {
-
+        y = transform.position.y;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey("left"))
@@ -23,11 +20,13 @@ public class MyCamera : MonoBehaviour
         }
         if (Input.GetKey("up"))
         {
-            transform.Translate(0, 0.1f, 0);
+            y = Mathf.Clamp(y + 0.05f, 1, 50);
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
         }
         if (Input.GetKey("down"))
         {
-            transform.Translate(0, -0.1f, 0);
+            y = Mathf.Clamp(y - 0.05f, 1, 50);
+            transform.position = new Vector3(transform.position.x, y, transform.position.z);
         }
         if (Input.GetKey("w"))
         {

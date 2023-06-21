@@ -260,8 +260,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4380630959937105348}
   - component: {fileID: -3222431769738679199}
-  - component: {fileID: 9186166945682676936}
-  - component: {fileID: -3455387618865007576}
+  - component: {fileID: 188412237055924326}
+  - component: {fileID: -8710870585470952093}
   m_Layer: 0
   m_Name: red
   m_TagString: Finish
@@ -301,7 +301,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9186166945682676936
+--- !u!114 &188412237055924326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,12 +313,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb37c82f702bace4893a43abd2f9be6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   raycastDistance: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &-3455387618865007576
+--- !u!114 &-8710870585470952093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadb5a2958d7ca5458f9b636fa66293e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 100
+  detectionRadius: 10
   restitution: 0.8
   objectLayer:
     serializedVersion: 2

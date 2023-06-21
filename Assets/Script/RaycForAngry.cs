@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RaycForAngry : MonoBehaviour
 {
-    public float speed = 1f;
     public float raycastDistance = 1f;
     public LayerMask groundLayer;
     private Rigidbody rb;

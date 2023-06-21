@@ -46,7 +46,7 @@ public class GJKVf : MonoBehaviour
                 List<Vector3> collisionPoints = GJKCollisionCheck(object1, object2);
                 if (collisionPoints.Count > 0)
                 {
-                    
+                    ResolveCollision(object1, object2, collisionPoints);
                 }
             }
         }
@@ -215,5 +215,42 @@ public class GJKVf : MonoBehaviour
         collisionPoints.Add(simplex[simplexSize - 1]);
         collisionPoints.Add(simplex[simplexSize - 2]);
         return collisionPoints;
+    }
+
+    private void ResolveCollision(GameObject object1, GameObject object2, List<Vector3> collisionPoints)
+    {
+        Rigidbody rb1 = object1.GetComponent<Rigidbody>();
+        Rigidbody rb2 = object2.GetComponent<Rigidbody>();
+        if (rb1 == null || rb2 == null)
+        {
+            return;
+        }
+
+        float totalMass = rb1.mass + rb2.mass;
+
+        foreach (Vector3 point in collisionPoints)
+        {
+            Vector3 collisionNormal = (object1.transform.position - object2.transform.position).normalized;
+            Vector3 relativeVelocity = rb1.GetPointVelocity(point) - rb2.GetPointVelocity(point);
+            float relativeVelocityAlongNormal = Vector3.Dot(relativeVelocity, collisionNormal);
+            if (relativeVelocityAlongNormal > 0f)
+            {
+                return;
+            }
+            float impulseMagnitude = -(1.0f + restitution) * relativeVelocityAlongNormal / totalMass;
+            rb1.AddForceAtPosition(impulseMagnitude * collisionNormal, point, ForceMode.Impulse);
+            rb2.AddForceAtPosition(-impulseMagnitude * collisionNormal, point, ForceMode.Impulse);
+        }
+        rb1.useGravity = true;
+        rb2.useGravity = true;
+    }
+
+    private void ApplyCollisionResponse(Rigidbody rb, Vector3 collisionNormal)
+    {
+        Vector3 relativeVelocity = rb.velocity;
+        float relativeVelocityAlongNormal = Vector3.Dot(relativeVelocity, collisionNormal);
+        Vector3 impulse = -(1.0f + restitution) * relativeVelocityAlongNormal * collisionNormal;
+        rb.AddForce(impulse, ForceMode.Impulse);
+        rb.AddRelativeTorque(-rb.angularVelocity, ForceMode.VelocityChange);
     }
 }

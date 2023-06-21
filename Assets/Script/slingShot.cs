@@ -8,7 +8,7 @@ public class slingShot : MonoBehaviour
     public Transform DrawFrom;
     public Transform DrawTo;
     public sling slingShotString;
-    public int NrDrawIcrements = 1;
+    public int NrDrawIcrements = 2;
     private static Transform currentProjectile;
     private bool draw;
     public AudioClip audioClip1;
@@ -54,7 +54,7 @@ public class slingShot : MonoBehaviour
         projecitleRigidBody.AddForce(transform.forward * shotForce, ForceMode.Impulse);
         slingShotString.CenterPoint = DrawFrom;
         Object.DontDestroyOnLoad(currentProjectile.GetComponent<Rigidbody>());
-        Destroy(currentProjectile.GetComponent<Rigidbody>(), 5f);
+        Destroy(currentProjectile.GetComponent<Rigidbody>(), 3f);
         // Find all instances of the prefab in the scene
     }
     public void DrawSlingShot(float speed)
