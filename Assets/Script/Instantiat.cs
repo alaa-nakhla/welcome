@@ -6,7 +6,7 @@ public class Instantiat : MonoBehaviour
 {
     public GameObject box;
     float counter;
-    Vector3 position = new Vector3(60f, 2f, -20f);
+    Vector3 position = new Vector3(-60f, 2f, -30f);
     // Start is called before the first frame update
     void Start()
     {

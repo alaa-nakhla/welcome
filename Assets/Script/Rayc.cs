@@ -17,7 +17,6 @@ public class Rayc : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance, groundLayer))
         {
-           //rb.velocity = new Vector3(rb.velocity.x, 0f,rb.velocity.z);
              rb.constraints |= RigidbodyConstraints.FreezePositionY;            
         }
     }

@@ -27,7 +27,7 @@ public class EPA2 : MonoBehaviour
                 GameObject object1 = gameObject;
                 GameObject object2 = obj;
                 BoundingSphere objBoundingSphere = new BoundingSphere(obj.transform.position, detectionRadius);
-                if (SphereCollisionCheck(boundingSphere, objBoundingSphere) && !(object2.CompareTag("planwe")) && !(object1.CompareTag("planwe")))
+                if (SphereCollisionCheck(boundingSphere, objBoundingSphere) && !(object2.CompareTag("planwe")) && !(object1.CompareTag("planwe"))&& !(object2.CompareTag("sling")))
                 {
                     if (AABBCollisionCheck(object1, object2))
                     {
@@ -72,8 +72,28 @@ public class EPA2 : MonoBehaviour
     }
     public List<Vector3> GJKCollisionCheck(GameObject objectA, GameObject objectB)
     {
-        Mesh meshA = objectA.GetComponent<MeshFilter>().sharedMesh;
-        Mesh meshB = objectB.GetComponent<MeshFilter>().sharedMesh;
+        Mesh meshA;
+        Mesh meshB;
+        
+            if (objectA.CompareTag("model"))
+            {
+
+                meshA = objectA.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            }
+            else
+            {
+                meshA = objectA.GetComponent<MeshFilter>().sharedMesh;
+            }
+            if (objectB.CompareTag("model"))
+            {
+
+                meshB = objectB.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+            }
+            else
+            {
+                meshB = objectB.GetComponent<MeshFilter>().sharedMesh;
+            }
+        
         Vector3[] verticesA = meshA.vertices;
         Vector3[] verticesB = meshB.vertices;
         Vector3 direction = Vector3.one;
@@ -239,8 +259,26 @@ public class EPA2 : MonoBehaviour
     }
     private List<Vector3> Epa(List<Vector3> simplex, GameObject objectA, GameObject objectB)
     {
-        Mesh meshA = objectA.GetComponent<MeshFilter>().sharedMesh;
-        Mesh meshB = objectB.GetComponent<MeshFilter>().sharedMesh;
+        Mesh meshA;
+        Mesh meshB;
+        if (objectA.CompareTag("model"))
+        {
+           
+            meshA = objectA.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        }
+        else
+        {
+            meshA = objectA.GetComponent<MeshFilter>().sharedMesh;
+        }
+        if (objectB.CompareTag("model"))
+        {
+    
+            meshB = objectB.GetComponent<SkinnedMeshRenderer>().sharedMesh;
+        }
+        else
+        {
+            meshB = objectB.GetComponent<MeshFilter>().sharedMesh;
+        }
         List<Tetrahedron> tetrahedrons = new List<Tetrahedron>();
         if (simplex.Count == 4)
         {

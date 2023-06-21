@@ -14,7 +14,6 @@ public class RaycForAngry : MonoBehaviour
 
     void FixedUpdate()
     {
-        // إطلاق الأشعة لأسفل من المكعب
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, raycastDistance, groundLayer))

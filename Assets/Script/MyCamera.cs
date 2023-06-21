@@ -12,11 +12,11 @@ public class MyCamera : MonoBehaviour
     {
         if (Input.GetKey("left"))
         {
-            transform.Translate(-0.1f, 0, 0);
+            transform.Translate(-0.2f, 0, 0);
         }
         if (Input.GetKey("right"))
         {
-            transform.Translate(0.1f, 0, 0);
+            transform.Translate(0.2f, 0, 0);
         }
         if (Input.GetKey("up"))
         {
